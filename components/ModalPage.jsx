@@ -103,17 +103,7 @@ export default function ModalPage() {
                                         minRows={2}
                                         ref={commentRef}
                                         placeholder="Tweet your reply"
-                                        style={{
-                                             backgroundColor: "transparent",
-                                             outline: "none",
-                                             fontSize: "16px",
-                                             fontWeight: "500",
-                                             minHeight: "60px",
-                                             overflow: "hidden",
-                                             border: "none",
-                                             paddingLeft: "12px",
-                                             width: "100%",
-                                        }}
+                                        style={{ backgroundColor: "transparent", outline: "none", fontSize: "16px", fontWeight: "500", minHeight: "60px", overflow: "hidden", border: "none", paddingLeft: "12px", width: "100%", }}
                                    />
                               </Box>
                               <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", pt: 1 }} >

@@ -102,13 +102,11 @@ function FeedPost({ id, post, postPage }) {
                               <Typography variant="body2" component="span" >
                                    <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
                               </Typography>
-                              {
-                                   !postPage && (
-                                        <Typography sx={{ mt: "2px" }} variant="body2" component="p">
-                                             {post?.text}
-                                        </Typography>
-                                   )
-                              }
+                              {!postPage && (
+                                   <Typography sx={{ mt: "2px" }} variant="body2" component="p">
+                                        {post?.text}
+                                   </Typography>
+                              )}
                          </Box>
                          <Box sx={{ display: "flex", ml: "auto", flexShrink: 0, alignItems: "center", justifyContent: "center", mb: "10px" }} >
                               <IconButton  >
@@ -119,21 +117,18 @@ function FeedPost({ id, post, postPage }) {
                     {postPage && (
                          <Typography sx={{ my: "4px" }} variant="body2" component="p">{post?.text}</Typography>
                     )}
-                    {
-                         post?.image && (
-                              <Image
-                                   src={post.image}
-                                   height={500}
-                                   width={500}
-                                   layout='responsive'
-                                   objectFit="cover"
-                                   alt=""
-                                   style={{ borderRadius: "30px" }}
-                              />
-                         )}
+                    {post?.image && (
+                         <Image
+                              src={post.image}
+                              height={500}
+                              width={500}
+                              layout='responsive'
+                              objectFit="cover"
+                              alt=""
+                              style={{ borderRadius: "30px" }}
+                         />
+                    )}
                     <Box component={"footer"} sx={[{ display: "flex", justifyContent: "space-between", width: "83%", mt: "6px" }, !postPage && { mx: "auto" }]}  >
-
-
                          <Box sx={{ display: "flex", alignItems: "center", mx: "auto" }} >
                               <IconButton
                                    onClick={(e) => {
@@ -173,23 +168,19 @@ function FeedPost({ id, post, postPage }) {
                                    likePost();
                               }}
                               sx={{ display: "flex", alignItems: "center", mx: 'auto' }} >
-                              {
-                                   liked ? (
-                                        <IconButton color="likeIconColor" >
-                                             <Favorite />
-                                        </IconButton>
-                                   ) : (
-                                        <IconButton color="likeIconColor" >
-                                             <FavoriteBorder />
-                                        </IconButton>
-                                   )
-                              }
+                              {liked ? (
+                                   <IconButton color="likeIconColor" >
+                                        <Favorite />
+                                   </IconButton>
+                              ) : (
+                                   <IconButton color="likeIconColor" >
+                                        <FavoriteBorder />
+                                   </IconButton>
+                              )}
                          </Box>
-
                          <IconButton color="mainIconColor" >
                               <DataSaverOnOutlined />
                          </IconButton>
-
                     </Box>
                </Box>
           </Box>

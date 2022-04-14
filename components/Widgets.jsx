@@ -32,7 +32,6 @@ function Widgets({ trendingResults, followResults }) {
                          }}
                     />
                </Box>
-
                <Box sx={{ my: "12px", pt: "8px", borderRadius: "12px", width: { lg: "91%", xl: "75%" }, border: "1px solid #e0e0ee" }} >
                     <Typography variant='subtitle1' fontSize="large" fontWeight='bold' px={2} component="h4">What's happening</Typography>
                     {trendingResults.map((result, index) => (
@@ -42,7 +41,6 @@ function Widgets({ trendingResults, followResults }) {
                          Show more
                     </Button>
                </Box>
-
                <Box sx={{ my: "12px", pt: "8px", borderRadius: "12px", width: { lg: "91%", xl: "75%" }, border: "1px solid #e0e0ee" }} >
                     <Typography variant='subtitle2' fontSize="large" fontWeight='bold' px={2} component="h4">Who to follow</Typography>
                     {
