@@ -2,7 +2,9 @@
 
 ## How to use
 
-![project images](http://url/to/img.png)
+## Screenshot
+
+![images](http://url/to/img.png)
 
 ## Step: 1 (required)
 
