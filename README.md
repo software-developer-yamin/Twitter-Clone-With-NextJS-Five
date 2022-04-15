@@ -17,10 +17,8 @@ cd Twitter-Clone-With-NextJS-Five
 
 ## Step: 2 (required)
 
-Install the package and run the app:
+Install the package:
 
 ```sh
 yarn
-yarn build
-yarn start
 ```
