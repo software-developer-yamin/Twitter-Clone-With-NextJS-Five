@@ -1,6 +1,6 @@
 # Twitter Clone
 
-## How to use
+## Follow the steps to use this application
 
 ## Screenshot
 
