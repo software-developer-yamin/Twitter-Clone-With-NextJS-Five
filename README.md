@@ -2,11 +2,9 @@
 
 ## How to use
 
-## step: 1
+## Step: 1 (required)
 
 clone the repo:
-
-<!-- #default-branch-switch -->
 
 ```sh
 curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
