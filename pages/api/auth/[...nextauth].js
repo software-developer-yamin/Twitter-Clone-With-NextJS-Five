@@ -9,8 +9,8 @@ export default NextAuth({
      // Configure one or more authentication providers
      providers: [
           GoogleProvider({
-               clientId: process.env.GOOGLE_CLIENT_ID,
-               clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+               clientId: "864346289111-vgfsb8khoqct7a34s2ha1nh1sdf2c41o.apps.googleusercontent.com",
+               clientSecret: "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",
           }),
           // ...add more providers here
      ],
@@ -25,6 +25,6 @@ export default NextAuth({
                return session;
           },
      },
-     secret: process.env.JWT_SECRET,
+     secret: "deworiowekwkhixdzusiewhknksihwehewrkolweo9",
      //adapter: FirebaseAdapter(db),
 });

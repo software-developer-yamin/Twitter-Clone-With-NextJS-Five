@@ -9,6 +9,8 @@ import ModalPage from "../components/ModalPage";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
 
+
+
 export default function Home({ trendingResults, followResults, providers }) {
      const [isOpen, setIsOpen] = useRecoilState(modalState);
      const { data: session } = useSession();
@@ -35,6 +37,8 @@ export default function Home({ trendingResults, followResults, providers }) {
           </Box>
      );
 };
+
+
 
 export async function getServerSideProps(context) {
      const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
