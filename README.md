@@ -2,6 +2,8 @@
 
 ## How to use
 
+![project images](http://url/to/img.png)
+
 ## Step: 1 (required)
 
 Run this clone repo command:
