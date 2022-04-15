@@ -12,6 +12,7 @@ Run this clone repo command:
 
 ```sh
 git clone https://github.com/DeveloperYamin/Twitter-Clone-With-NextJS-Five.git
+cd Twitter-Clone-With-NextJS-Five
 ```
 
 ## Step: 2 (required)
