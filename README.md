@@ -4,11 +4,10 @@
 
 ## Step: 1 (required)
 
-clone the repo:
+Run the command clone repo:
 
 ```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+git clone https://github.com/DeveloperYamin/Twitter-Clone-With-NextJS-Five.git
 ```
 
 Install it and run:
