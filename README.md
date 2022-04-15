@@ -4,7 +4,7 @@
 
 ## Step: 1 (required)
 
-Run the command clone repo:
+Run this clone repo command:
 
 ```sh
 git clone https://github.com/DeveloperYamin/Twitter-Clone-With-NextJS-Five.git
