@@ -20,7 +20,7 @@ export default function Home({ trendingResults, followResults, providers }) {
      return (
           <Box component="section" >
                <Head>
-                    <title>Twitter</title>
+                    <title>Twitter Clone</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
 

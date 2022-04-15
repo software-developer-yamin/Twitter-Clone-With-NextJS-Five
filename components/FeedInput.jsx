@@ -84,7 +84,7 @@ function FeedInput() {
                               value={input}
                               onChange={(e) => setInput(e.target.value)}
                               placeholder="What's happening?"
-                              style={{ backgroundColor: "transparent", outline: "none", fontSize: "18px", fontWeight: "500", minHeight: "60px", overflow: "hidden", border: "none", paddingLeft: "6px", width: "100%", }}
+                              style={{ backgroundColor: "transparent", outline: "none", fontSize: "18px", fontWeight: "500", minHeight: "60px", overflow: "hidden", border: "none", paddingLeft: "6px", width: "100%", minWidth: "200px" }}
                          />
                          {
                               selectedFile && (
