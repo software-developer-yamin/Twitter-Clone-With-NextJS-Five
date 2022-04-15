@@ -2,7 +2,9 @@
 
 ## How to use
 
-### Clone the repo :
+## 1 Step:
+
+clone the repo:
 
 <!-- #default-branch-switch -->
 
