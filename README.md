@@ -22,3 +22,9 @@ Install the package:
 ```sh
 yarn
 ```
+
+Run build command:
+
+```sh
+yarn build
+```
