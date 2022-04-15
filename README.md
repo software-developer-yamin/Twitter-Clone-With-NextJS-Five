@@ -10,6 +10,8 @@ Run this clone repo command:
 git clone https://github.com/DeveloperYamin/Twitter-Clone-With-NextJS-Five.git
 ```
 
+## Step: 2 (required)
+
 Install it and run:
 
 ```sh
