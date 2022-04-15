@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-![images](http://url/to/img.png)
+[![Twitter-Clone.png](https://i.postimg.cc/g06hfZ2c/Twitter-Clone.png)](https://postimg.cc/SXkj9j9H)
 
 ## Step: 1 (required)
 
