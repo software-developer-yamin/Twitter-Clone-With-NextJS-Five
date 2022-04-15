@@ -2,7 +2,7 @@
 
 ## How to use
 
-## 1 Step:
+## step: 1
 
 clone the repo:
 
