@@ -28,3 +28,9 @@ Run build command:
 ```sh
 yarn build
 ```
+
+Run the app:
+
+```sh
+yarn start
+```
