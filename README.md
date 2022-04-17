@@ -34,5 +34,3 @@ Run the app:
 ```sh
 yarn start
 ```
-# Twitter-Clone-NextJS-Challenge
-# Twitter-Clone-NextJS-Challenge
