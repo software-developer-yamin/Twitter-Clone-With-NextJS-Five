@@ -29,10 +29,10 @@ function FeedInput() {
           if (loading) return;
           setLoading(true);
           const docRef = await addDoc(collection(db, "posts"), {
-               id: session.user.uid,
-               username: session.user.name,
-               userImg: session.user.image,
-               tag: session.user.tag,
+               id: session?.user?.uid,
+               username: session?.user?.name,
+               userImg: session?.user?.image,
+               tag: session?.user?.tag,
                text: input,
                timestamp: serverTimestamp(),
           });
@@ -73,7 +73,7 @@ function FeedInput() {
           <Box
                sx={{ borderBottom: "1px solid #e0e0e0", display: "flex", flex: 1, p: "12px", opacity: loading ? 0.5 : 1, }}
           >
-               <Avatar onClick={signOut} src={session.user.image} alt="" fontSize="large" mt="auto" sx={{ "&:hover": { opacity: 0.8, cursor: "pointer" } }} />
+               <Avatar onClick={() => signOut({ callbackUrl: "/" })} src={session.user.image} alt="" fontSize="large" mt="auto" sx={{ "&:hover": { opacity: 0.8, cursor: "pointer" } }} />
                <Box
                     sx={{ borderTop: "1px solid #e0e0e0", borderBottom: "1px solid #e0e0e0", width: "100%", ml: { xs: "6px", sm: "10px" }, overflow: "hidden" }}
                >

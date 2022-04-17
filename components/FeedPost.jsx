@@ -58,10 +58,10 @@ function FeedPost({ id, post, postPage }) {
 
      const likePost = async () => {
           if (liked) {
-               await deleteDoc(doc(db, "posts", id, "likes", session.user.uid));
+               await deleteDoc(doc(db, "posts", id, "likes", session?.user?.uid));
           } else {
-               await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
-                    username: session.user.name,
+               await setDoc(doc(db, "posts", id, "likes", session?.user?.uid), {
+                    username: session?.user?.name,
                });
           }
      };
@@ -142,7 +142,7 @@ function FeedPost({ id, post, postPage }) {
                               </IconButton>
                          </Box>
 
-                         {session.user.uid === post?.id ? (
+                         {session?.user?.uid === post?.id ? (
                               <Box
                                    onClick={(e) => {
                                         e.stopPropagation();

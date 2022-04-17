@@ -1,11 +1,11 @@
-import GoogleIcon from '@mui/icons-material/Google';
+import { Google } from '@mui/icons-material';
 import { Box, Button } from '@mui/material';
 import { signIn } from "next-auth/react";
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 
-function Login({ providers }) {
+function Login() {
      return (
           <>
                <Head>
@@ -33,17 +33,29 @@ function Login({ providers }) {
                          objectFit="cover"
                     />
                     <Box sx={{ mt: "20px" }} >
-                         {Object.values(providers).map((provider) => (
-                              <Button
-                                   key={provider.name}
-                                   onClick={() => signIn(provider.id, { callbackUrl: "/" })}
-                                   variant="outlined"
-                                   size='large'
-                                   startIcon={<GoogleIcon />}
-                              >
-                                   Sign In With {provider.name}
-                              </Button>
-                         ))}
+                         {
+                              /*
+                              {Object.values(providers).map((provider) => (
+                                   <Button
+                                        key={provider.name}
+                                        onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+                                        variant="outlined"
+                                        size='large'
+                                        startIcon={<GoogleIcon />}
+                                   >
+                                        Sign In With {provider.name}
+                                   </Button>
+                              ))}
+                              */
+                         }
+                         <Button
+                              onClick={() => signIn("google", { callbackUrl: "/" })}
+                              variant="outlined"
+                              size='large'
+                              startIcon={<Google />}
+                         >
+                              Sign In With Google
+                         </Button>
                     </Box>
                </Box>
           </>

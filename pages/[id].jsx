@@ -7,7 +7,7 @@ import {
 } from "@firebase/firestore";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Box, IconButton, Typography } from "@mui/material";
-import { getProviders, getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -18,10 +18,10 @@ import Post from "../components/FeedPost";
 import ModalPage from "../components/ModalPage";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
+import { followResults, trendingResults } from "../data";
 import { db } from "../firebase";
 
-export default function PostPage({ trendingResults, followResults, providers }) {
-     const { data: session } = useSession();
+export default function PostPage() {
      const [post, setPost] = useState();
      const [isOpen, setIsOpen] = useRecoilState(modalState);
      const [comments, setComments] = useState([]);
@@ -47,8 +47,6 @@ export default function PostPage({ trendingResults, followResults, providers }) 
                ),
           [db, id]
      );
-
-     if (!session) return <Login providers={providers} />;
 
      return (
           <Box component="section" >
@@ -106,6 +104,8 @@ export default function PostPage({ trendingResults, followResults, providers }) 
      )
 };
 
+
+/*
 export async function getServerSideProps(context) {
      const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
           (res) => res.json()
@@ -125,3 +125,4 @@ export async function getServerSideProps(context) {
           },
      };
 }
+*/

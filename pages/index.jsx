@@ -8,14 +8,15 @@ import Login from "../components/Login";
 import ModalPage from "../components/ModalPage";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
+import { followResults, trendingResults } from "../data";
 
 
 
-export default function Home({ trendingResults, followResults, providers }) {
+export default function Home() {
      const [isOpen, setIsOpen] = useRecoilState(modalState);
      const { data: session } = useSession();
 
-     if (!session) return <Login providers={providers} />;
+     if (!session) return <Login />;
 
      return (
           <Box component="section" >
@@ -39,7 +40,7 @@ export default function Home({ trendingResults, followResults, providers }) {
 };
 
 
-
+/*
 export async function getServerSideProps(context) {
      const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
           (res) => res.json()
@@ -59,3 +60,4 @@ export async function getServerSideProps(context) {
           },
      };
 }
+*/
