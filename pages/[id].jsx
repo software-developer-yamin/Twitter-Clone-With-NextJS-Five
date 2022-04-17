@@ -49,7 +49,7 @@ export default function PostPage() {
      );
 
      return (
-          <Box component="section" >
+          <Box component="section">
                <Head>
                     <title>
                          {post?.username} on Twitter: "{post?.text}"
@@ -106,6 +106,9 @@ export default function PostPage() {
 
 
 /*
+
+/// Deployment problems ///
+
 export async function getServerSideProps(context) {
      const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
           (res) => res.json()

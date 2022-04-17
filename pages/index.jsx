@@ -41,6 +41,8 @@ export default function Home() {
 
 
 /*
+/// Deployment problems ///
+
 export async function getServerSideProps(context) {
      const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
           (res) => res.json()
