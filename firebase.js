@@ -13,16 +13,15 @@ import {
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-     apiKey: "AIzaSyCJNV80QZFdiGlbbZ9JUxPDcmeiW0s1800",
-     authDomain: "twitter-clone-nextjs-challenge.firebaseapp.com",
-     projectId: "twitter-clone-nextjs-challenge",
-     storageBucket: "twitter-clone-nextjs-challenge.appspot.com",
-     messagingSenderId: "864346289111",
-     appId: "1:864346289111:web:5381059bfaf221f5aa9192",
-     measurementId: "G-C8PV8P43N9"
-};
+     apiKey: "AIzaSyDLEzjf_Z0z0yE_qJ8PDg3BjCb6aLx_C-4",
+     authDomain: "twitter-clone-mui.firebaseapp.com",
+     projectId: "twitter-clone-mui",
+     storageBucket: "twitter-clone-mui.appspot.com",
+     messagingSenderId: "517248368306",
+     appId: "1:517248368306:web:b8f8f86d75767c45f293ab",
+     measurementId: "G-GWMBL0PVK2"
+   };
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

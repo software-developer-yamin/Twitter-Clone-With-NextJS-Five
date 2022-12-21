@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { getProviders, getSession, useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
@@ -8,58 +8,57 @@ import Login from "../components/Login";
 import ModalPage from "../components/ModalPage";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
-import { followResults, trendingResults } from "../data";
+// import { followResults, trendingResults } from "../data";
 
+export default function Home({ followResults, trendingResults, providers }) {
+  const [isOpen, setIsOpen] = useRecoilState(modalState);
+  const { data: session } = useSession();
 
+  if (!session) return <Login providers={providers} />;
 
-export default function Home() {
-     const [isOpen, setIsOpen] = useRecoilState(modalState);
-     const { data: session } = useSession();
+  return (
+    <Box component="section">
+      <Head>
+        <title>Twitter Clone</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-     if (!session) return <Login />;
+      <Box
+        display="flex"
+        minHeight="100vh"
+        maxWidth="1500px"
+        mx="auto"
+        component="main"
+      >
+        <Sidebar />
+        <Feed />
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
 
-     return (
-          <Box component="section" >
-               <Head>
-                    <title>Twitter Clone</title>
-                    <link rel="icon" href="/favicon.ico" />
-               </Head>
+        {isOpen && <ModalPage />}
+      </Box>
+    </Box>
+  );
+}
 
-               <Box display="flex" minHeight="100vh" maxWidth="1500px" mx="auto" component="main">
-                    <Sidebar />
-                    <Feed />
-                    <Widgets
-                         trendingResults={trendingResults}
-                         followResults={followResults}
-                    />
-
-                    {isOpen && <ModalPage />}
-               </Box>
-          </Box>
-     );
-};
-
-
-/*
 /// Deployment problems ///
 
 export async function getServerSideProps(context) {
-     const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
-          (res) => res.json()
-     );
-     const followResults = await fetch("https://jsonkeeper.com/b/WWMJ").then(
-          (res) => res.json()
-     );
-     const providers = await getProviders();
-     const session = await getSession(context);
+  const trendingResults = await fetch(
+    "https://api.npoint.io/e4c062729eeea48124ed"
+  ).then((res) => res.json());
+  const followResults = await fetch(
+    "https://api.npoint.io/a0d72e78f4cc071aaba1"
+  ).then((res) => res.json());
+  const session = await getSession(context);
 
-     return {
-          props: {
-               trendingResults,
-               followResults,
-               providers,
-               session,
-          },
-     };
+  return {
+    props: {
+      trendingResults,
+      followResults,
+      session,
+    },
+  };
 }
-*/

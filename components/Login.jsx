@@ -31,6 +31,7 @@ function Login() {
                          width={250}
                          height={250}
                          objectFit="cover"
+                         priority
                     />
                     <Box sx={{ mt: "20px" }} >
                          {
