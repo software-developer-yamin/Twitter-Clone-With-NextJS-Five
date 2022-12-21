@@ -7,7 +7,7 @@ import {
 } from "@firebase/firestore";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box, IconButton, Typography } from "@mui/material";
-import { useSession, getSession } from "next-auth/react";
+import { useSession, getSession, getProviders } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -18,10 +18,17 @@ import Post from "../components/FeedPost";
 import ModalPage from "../components/ModalPage";
 import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
-import { followResults, trendingResults } from "../data";
+import Login from "../components/Login";
+// import { followResults, trendingResults } from "../data";
 import { db } from "../firebase";
 
-export default function PostPage() {
+export default function PostPage({
+  followResults,
+  trendingResults,
+  providers,
+}) {
+  const { data: session } = useSession();
+  if (!session) return <Login providers={providers} />;
   const [post, setPost] = useState();
   const [isOpen, setIsOpen] = useRecoilState(modalState);
   const [comments, setComments] = useState([]);
@@ -131,12 +138,14 @@ export async function getServerSideProps(context) {
   const followResults = await fetch(
     "https://api.npoint.io/a0d72e78f4cc071aaba1"
   ).then((res) => res.json());
+  const providers = await getProviders();
   const session = await getSession(context);
 
   return {
     props: {
       trendingResults,
       followResults,
+      providers,
       session,
     },
   };

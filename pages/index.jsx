@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { getSession, useSession } from "next-auth/react";
+import { getSession, useSession, getProviders } from "next-auth/react";
 import Head from "next/head";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
@@ -52,12 +52,14 @@ export async function getServerSideProps(context) {
   const followResults = await fetch(
     "https://api.npoint.io/a0d72e78f4cc071aaba1"
   ).then((res) => res.json());
+  const providers = await getProviders();
   const session = await getSession(context);
 
   return {
     props: {
       trendingResults,
       followResults,
+      providers,
       session,
     },
   };
